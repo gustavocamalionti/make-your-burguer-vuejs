@@ -1,0 +1,122 @@
+// Iniciar o Projeto
+npm install -g @vue/cli
+vue -V
+vue create source (BABEL E ROUTER)
+cd source
+npm run server
+
+// Simular back-end (como se fosse uma API)
+npm install json-server
+alterar package.json => "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "backend": "json-server --watch db/db.json"
+  },
+criar arquivo db/db.json (junto com a pasta)
+adicionar json => {
+    "ingredientes": {
+        "paes": [
+            {
+                "id": 1,
+                "tipo": "Italiano Branco"
+            },
+            {
+                "id": 2,
+                "tipo": "3 Queijos"
+            },
+            {
+                "id": 3,
+                "tipo": "Parmesão e Orégano"
+            },
+            {
+                "id": 4,
+                "tipo": "Integral"
+            }
+        ],
+        "carnes": [
+            {
+                "id": 1,
+                "tipo": "Maminha"
+            },
+            {
+                "id": 2,
+                "tipo": "Alcatra"
+            },
+            {
+                "id": 3,
+                "tipo": "Picanha"
+            },
+            {
+                "id": 4,
+                "tipo": "Veggie burger"
+            }
+        ],
+        "opcionais": [
+            {
+                "id": 1,
+                "tipo": "Bacon"
+            },
+            {
+                "id": 2,
+                "tipo": "Cheddar"
+            },
+            {
+                "id": 3,
+                "tipo": "Salame"
+            },
+            {
+                "id": 4,
+                "tipo": "Tomate"
+            },
+            {
+                "id": 4,
+                "tipo": "Cebola roxa"
+            },
+            {
+                "id": 4,
+                "tipo": "Pepino"
+            }
+        ]
+    },
+    "status": [
+        {
+            "id": 1,
+            "tipo": "Solicitado"
+        },
+        {
+            "id": 2,
+            "tipo": "Em produção"
+        },
+        {
+            "id": 3,
+            "tipo": "Finalizado"
+        }
+    ],
+    "burgers": [
+        {
+            "nome": "Matheus Battisti",
+            "carne": "Picanha",
+            "pao": "Italiano Branco",
+            "opcionais": [
+                "Bacon",
+                "Salame",
+                "Cebola roxa"
+            ],
+            "status": "Finalizado",
+            "id": 1
+        },
+        {
+            "nome": "João Coelho",
+            "carne": "Maminha",
+            "pao": "3 Queijos",
+            "opcionais": [
+                "Salame",
+                "Cebola roxa"
+            ],
+            "status": "Solicitado",
+            "id": 4
+        }
+    ]
+}
+rodar npm run backend
+
